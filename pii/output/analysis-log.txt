@@ -1,0 +1,78 @@
+cmdline: command line: /usr/local/cov-analysis-7.6.0/bin/cov-analyze --dir /home/a53ali/coverity-idirs/g118_myproj --include-java -j auto --strip-path /home/a53ali/g118 --enable-fb 
+cmdline: parsed cmdline: [
+cmdline:   { name: "dir", args: [ "/home/a53ali/coverity-idirs/g118_myproj" ] },
+cmdline:   { name: "include-java" },
+cmdline:   { name: "jobs", args: [ "auto" ] },
+cmdline:   { name: "strip-path", args: [ "/home/a53ali/g118" ] },
+cmdline:   { name: "enable-fb" },
+cmdline:   { name: "config", args: [ "/usr/local/cov-analysis-7.6.0/config/coverity_config.xml" ] },
+cmdline: ]
+startup: am_pid=17155
+startup: detected platform: Linux 2.6.18-402.el5 x86_64
+startup: target platform: linux64
+startup: Detected 8 logical cpus
+startup: Detected 8 cpu cores
+startup: host name: eceLinux1.uwaterloo.ca
+startup: user name: a53ali
+startup: Analysis version: 7.6.0 (9b77a50df0 p-harmony-push-21098.563)
+startup: temp directory: /tmp/cov-a53ali/8569ec5d7f3e25e1cbcd5cd717052afd
+startup: enable_constraint_fpp=0
+startup: current time: 2015-Apr-05 15:44:08
+startup: Detected amount of memory: 32687176kb
+startup: Limiting memory to 29418458kb
+startup: mem limit: current limit of 5644288000 is already less than or equal to desired value of 30124500992; skipping
+cicx: Running: /usr/local/cov-analysis-7.6.0/bin/cov-internal-calc-xrefs --emit /home/a53ali/coverity-idirs/g118_myproj/emit --output /home/a53ali/coverity-idirs/g118_myproj/output/merged-xrefs --strip-path /home/a53ali/g118 --no-timestamp --ticker-mode=no-spin --tus-file /home/a53ali/coverity-idirs/g118_myproj/output/tus
+wlink: Skipping web-app linking, no archives
+emitdb: callgraph.cpp:2056 11111111
+emitdb: callgraph.cpp:2077 11000011
+emitdb: callgraph.cpp:2098 11000011
+rta: RTA discarded 166238 functions
+emitdb: callgraph.cpp:2108 11000000
+dataflow-directives: Optimizing dataflow configuration
+general: Starting analysis
+Using FindBugs 3.0.0-dev-20140429-1103397
+
+Scanning archives (2 / 2)
+2 analysis passes to perform
+Pass 1: Analyzing classes (26 / 26) - 100% complete
+Pass 2: Analyzing classes (1 / 1) - 100% complete
+Done with analysis
+dm-access-lib: AM listening for DM at 127.0.0.1:53269
+dm-access-lib: AM starting DM with command line: /usr/local/cov-analysis-7.6.0/bin/cov-internal-dm --AM-port 53269 --log-file /home/a53ali/coverity-idirs/g118_myproj/output/distributor.log -j 8 --AW-timeout 36000 /usr/local/cov-analysis-7.6.0/bin/cov-analyze --worker
+dm-access-lib: DM started: dm_pid=17227
+dm-access-lib: AM got connection from DM: (local) 127.0.0.1:53269 - 127.0.0.1:34446 (remote)
+wurlegend: <phase><n> dw_id wup_bytes dw_ms wur_bytes aw_ms [mem] paths (rest are labeled)
+wur: stat0 1 26993 58 1124 14 mem=6455296 max=35155968 121 nr=8 n: batch 0
+wur: conc6 2 9127 48 186 9 mem=6254592 max=34955264 17 n: pip.parse(java.lang.String)void in TU 2
+wur: conc2 1 16927 63 53 59 71 n: pip.bug()void in TU 2
+wur: conc0 5 676 68 52 1 mem=5812224 max=34521088 1 n: pip.<clinit>()void in TU 2
+wur: conc1 6 720 67 52 0 mem=5816320 max=34521088 1 n: pip.<init>()void in TU 2
+wur: conc5 4 5240 71 52 5 mem=5976064 max=34676736 9 n: pip.flip2()void in TU 2
+wur: conc4 3 6755 76 52 15 mem=6111232 max=34811904 24 n: pip.flip()void in TU 2
+wur: conc3 7 5461 74 52 10 mem=5980160 max=34680832 9 n: pip.bug1()void in TU 2
+wur: conc7 1 4351 20 248 19 26 n: pip.main(java.lang.String[])void in TU 2
+wur: conctd7 2 337 1 13 0 1 n: pip.<clinit>()void in TU 2
+wur: conctd6 2 391 0 67 0 1 n: pip.<init>()void in TU 2
+wur: conctd0 1 3976 7 258 6 34 n: pip.main(java.lang.String[])void in TU 2
+wur: conctd2 3 4577 7 271 5 9 n: pip.flip2()void in TU 2
+wur: conctd4 2 4739 7 267 6 9 n: pip.bug1()void in TU 2
+wur: conctd1 3 8217 12 401 11 17 n: pip.parse(java.lang.String)void in TU 2
+wur: conctd3 2 5778 17 324 16 24 n: pip.flip()void in TU 2
+wur: conctd5 1 15844 33 472 31 51 n: pip.bug()void in TU 2
+wur: gen0 1 50221 85 583 80 206 nr=8 n: batch 0
+summary: Analysis summary report:
+summary: ------------------------
+summary: Files analyzed                 : 1
+summary: Total LoC input to cov-analyze : 166
+summary: Functions analyzed             : 8
+summary: Paths analyzed                 : 210
+summary: Time taken by analysis         : 00:00:21
+summary: Defect occurrences found       : 1 RESOURCE_LEAK
+summary: 
+summary: Number of functions: 8
+summary: out_of_memory count: 0
+summary: paths_exceeded count: 0
+summary: recoverable failures: 0
+mem: AM peak mem bytes: 260644864
+assert: suppressed asserts: workers=0, master=0
+failures: recoverable failures: workers=0, master=0

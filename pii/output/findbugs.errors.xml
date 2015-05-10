@@ -1,0 +1,58 @@
+<error>
+<domain>STATIC_JAVA</domain>
+<checker>FB.DM_DEFAULT_ENCODING</checker>
+<file>/home/a53ali/g118/pip.java</file>
+<function>pip.parse(java.lang.String)</function>
+<ordered>true</ordered>
+<event>
+<main>true</main>
+<tag>defect</tag>
+<description>{CovLStr{v1}{Found reliance on default encoding: {0}.}{new java.io.InputStreamReader(InputStream)}}</description>
+<line>35</line>
+</event>
+<extra></extra>
+<subcategory>none</subcategory>
+<properties>
+<property>
+<key>fb.priority</key>
+<value>High</value>
+</property>
+</properties>
+<typePropertiesGroup>
+<category>FindBugs: Internationalization</category>
+<impact>Low</impact>
+<type>Dm: Dubious method used</type>
+<localEffect></localEffect>
+<longDescription>Found a call to a method which will perform a byte to String (or String to byte) conversion, and will assume that the default platform encoding is suitable. (&lt;a href=&quot;/docs/en/findbugs/fb_checker_ref.html#FB.DM_DEFAULT_ENCODING&quot; target=&quot;_blank&quot;&gt;From FindBugs&amp;#x2122; description&lt;/a&gt;)</longDescription>
+<qualityKind>true</qualityKind>
+</typePropertiesGroup>
+</error>
+<error>
+<domain>STATIC_JAVA</domain>
+<checker>FB.GC_UNRELATED_TYPES</checker>
+<file>/home/a53ali/g118/pip.java</file>
+<function>pip.parse(java.lang.String)</function>
+<ordered>true</ordered>
+<event>
+<main>true</main>
+<tag>defect</tag>
+<description>{CovLStr{v1}{{0} is incompatible with expected argument type {1}.}{String}{Integer}}</description>
+<line>54</line>
+</event>
+<extra></extra>
+<subcategory>none</subcategory>
+<properties>
+<property>
+<key>fb.priority</key>
+<value>High</value>
+</property>
+</properties>
+<typePropertiesGroup>
+<category>FindBugs: Correctness</category>
+<impact>Medium</impact>
+<type>GC: Suspicious calls to generic collection methods</type>
+<localEffect></localEffect>
+<longDescription>This call to a generic collection method contains an argument with an incompatible class from that of the collection's parameter (i.e., the type of the argument is neither a supertype nor a subtype of the corresponding generic type argument). (&lt;a href=&quot;/docs/en/findbugs/fb_checker_ref.html#FB.GC_UNRELATED_TYPES&quot; target=&quot;_blank&quot;&gt;From FindBugs&amp;#x2122; description&lt;/a&gt;)</longDescription>
+<qualityKind>true</qualityKind>
+</typePropertiesGroup>
+</error>

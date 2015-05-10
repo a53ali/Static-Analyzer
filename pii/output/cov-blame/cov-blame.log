@@ -1,0 +1,8 @@
+[LOG] run: /usr/local/cov-analysis-7.6.0/bin/cov-format-errors --dir /home/a53ali/coverity-idirs/g118_myproj --json-output-v3 /home/a53ali/coverity-idirs/g118_myproj/output/cov-blame/errors.json
+[LOG] /usr/local/cov-analysis-7.6.0/bin/cov-format-errors exits successfully.
+[INFO] Computing likely owner for 10210 [be735b60ed0ea6105b1df518e48c7761]:
+[INFO] 	default_component_owner: none
+[INFO] Computing likely owner for 10211 [8d2e45e40e0d69ca71b54b6f04ad4a17]:
+[INFO] 	default_component_owner: none
+[INFO] Computing likely owner for 10209 [62f55165ca968a001788386768ed1f6a]:
+[INFO] 	default_component_owner: none

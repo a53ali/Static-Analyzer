@@ -1,0 +1,251 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+
+
+public class pip {
+
+	static Hashtable<String,ArrayList<String>> graph;
+	static Hashtable<Integer,ArrayList<Integer>> graphflip;
+	static Hashtable<String,Integer> enc;
+	static Hashtable<Integer,String> dec;
+	static int support = 3;
+	static float confidence = 0.65f;
+
+
+	//Read in the call graph
+	// Creates a mapping between the call graph and its functions.
+	private static void parse(String string) {
+		// TODO Auto-generated method stub
+		// Open the file
+		FileInputStream fstream;
+		String caller = "";
+		String callee = "";
+		int id = 0;
+		try {
+			fstream = new FileInputStream(string);
+			BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+			String strLine;
+
+			//Read File Line By Line
+			while ((strLine = br.readLine()) != null)   {
+				// Print the content on the console
+				//System.out.println (strLine);
+				if(strLine.contains("Call graph node for function: ")){
+					callee = strLine.split("'")[1];
+					//System.out.println (strLine.split("'")[1]);
+					enc.put(callee, id);
+					dec.put(id,callee);
+					id++;
+					graph.put(callee,new ArrayList<String>());
+
+				}else if(strLine.contains("calls function") && callee != ""){
+					//System.out.println (strLine.split("'")[1]);
+					caller = strLine.split("'")[1];
+					if(!enc.contains(callee)){
+						enc.put(caller, id);
+						dec.put(id,caller);
+						id++;
+					}
+					ArrayList<String> s = new ArrayList<String>();
+					s.add(caller);
+					s.addAll(graph.get(callee));
+					graph.put(callee,s);
+				}
+			}
+
+			//Close the input stream
+			br.close();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}	
+
+	// A debug function used to print the call graph nodes and its functions
+	public static void flip2(){
+		Enumeration<String> enumKey = graph.keys();
+		int k; 
+		int j;
+		while(enumKey.hasMoreElements()) {
+			String key = enumKey.nextElement();
+			ArrayList<String> l = graph.get(key);
+			j = enc.get(key);
+			System.out.println(key);
+			//Hashtable<Integer,ArrayList<Integer>> graphflip;
+			for(int i = 0; i < l.size(); i++){
+
+				System.out.println("      " + l.get(i) + "  " + enc.get(l.get(i)));
+			}
+		}
+		System.out.println(" -----------------------     ");
+	}
+
+	//Creates an inverse mapping of functions and their parent, call graph node.
+	public static void flip(){
+		Enumeration<String> enumKey = graph.keys();
+		int k; 
+		int j;
+		while(enumKey.hasMoreElements()) {
+			String key = enumKey.nextElement();
+			ArrayList<String> l = graph.get(key);
+			j = enc.get(key);
+			//Hashtable<Integer,ArrayList<Integer>> graphflip;
+			for(int i = 0; i < l.size(); i++){
+				k = enc.get(l.get(i));
+				//System.out.println(k);
+				if (graphflip.containsKey(k)){
+					ArrayList<Integer> s = graphflip.get(k);
+					//System.out.println(" ------");
+					///System.out.println(s.size());
+					if(!s.contains(j)){
+						s.add(j);
+						//System.out.println(s.size());
+						graphflip.put(k,s);}
+
+				}else{
+					graphflip.put(k, new ArrayList<Integer>());
+					ArrayList<Integer> s = new ArrayList<Integer>();
+					s.add(j);
+					graphflip.put(k,s);
+					//System.out.println(s.size());
+					//System.out.println(" ------");
+				}
+			}
+			//System.out.println(" ------");
+		}
+
+	}
+
+	// A debug function used to print the inverse mapping
+	public static void bug1(){
+		Enumeration<Integer> enumKey = graphflip.keys();
+
+		while(enumKey.hasMoreElements()) {
+			int key = enumKey.nextElement();
+			System.out.println(dec.get(key) );
+			for(int i = 0; i < graphflip.get(key).size(); i++){
+				System.out.println("   " + graphflip.get(key).get(i));
+			}
+			System.out.println(" -----------------------     ");
+		}		
+	}
+
+
+	// Checks pairs in the inverse mapping to determine bugs by
+	//  	Iterate the mapping from part 3 twice, and if 
+	//		function1!= function 2 , support >= T_Support, confidence >= T_Confidence then
+	public static void bug(){
+		float con;
+		DecimalFormat df = new DecimalFormat("0.00");
+		Enumeration<Integer> enumKey = graphflip.keys();
+		Enumeration<Integer> enumKey2 = graphflip.keys();
+		ArrayList<Integer> result;
+		ArrayList<String> s = new ArrayList<String>();
+		String strn;
+		int supp;
+		while(enumKey.hasMoreElements()) {
+			int key = enumKey.nextElement();
+			enumKey2 = graphflip.keys();
+			while(enumKey2.hasMoreElements()) {
+				int key2 = enumKey2.nextElement();
+				if(key2 != key){
+					//i.	Support = each mapping size tells us directly the support of a 
+					//      given call functions.
+					//ii.	Support (function1, function2) = the size of intersection of two
+					//		mappings sets is the support of the two functions.
+					//iii.	Confidence (function1, function2) = the intersection of the two 
+					// 		mappings divided by one of the two mappings tells us its confidence.
+
+					//intersection
+					ArrayList<Integer> c = new ArrayList<Integer> (graphflip.get(key).size() > graphflip.get(key2).size() ?graphflip.get(key).size():graphflip.get(key2).size());
+					c.addAll(graphflip.get(key));
+					c.retainAll(graphflip.get(key2));
+					//System.out.println (c.size());
+					//System.out.println(" ----------k-------------     ");
+					con = (float)c.size()/(float)graphflip.get(key).size();
+					supp = c.size();
+					
+					
+					//4.	Iterate the mapping from part 3 twice, and if function1!= function 2 , 
+					//		support >= T_Support, confidence >= T_Confidence then
+					//i.	Iterate through the set difference of function1 and function2 
+					//		and print there is a bug as required.
+
+					if(c.size() >= support && con >= confidence && con < 1){
+						c = new ArrayList<Integer> (graphflip.get(key).size() > graphflip.get(key2).size() ?graphflip.get(key).size():graphflip.get(key2).size());
+						c.addAll(graphflip.get(key));
+						c.removeAll(graphflip.get(key2));
+						for(int q =0; q < c.size();q++){
+							strn = "bug: " +dec.get(key);
+							strn = strn + " in " + dec.get(c.get(q)) +  ", pair: (" ;
+							int compare = dec.get(key).compareTo(dec.get(key2));
+							if(compare < 0){
+								strn = strn + dec.get(key) + ", "  + dec.get(key2) + "), ";
+							}else{
+								strn = strn + dec.get(key2) + ", "  + dec.get(key) + "), ";
+							}
+							strn = strn + "support: " + supp + ", confidence: " + df.format(con*100) +"%";
+							s.add(strn);
+						}
+					}
+				}
+			}
+		}		
+		Collections.sort(s);
+		for(int i = 0; i < s.size(); i++) {   
+			System.out.println(s.get(i));
+		}  
+
+	}
+
+	public static void main(String[] args) {
+
+		graph = new Hashtable<String,ArrayList<String>>();
+		graphflip = new Hashtable<Integer,ArrayList<Integer>>();
+		dec = new Hashtable<Integer,String>();
+		enc = new Hashtable<String,Integer>();
+
+
+
+		if (args.length < 1) {
+			System.out.println("Usage: ./pipair <bitcode file> <T SUPPORT> <T CONFIDENCE>,");
+			//System.exit(0);
+		}
+
+
+		if (args.length >= 2) {
+			support = Integer.parseInt(args[1]);
+		}
+		if (args.length >= 3) {
+			confidence = (float)Integer.parseInt(args[2])/100;
+		}
+
+		parse("callgraph.txt");
+		flip();
+		//flip2();
+		//bug1();
+		bug();
+
+
+	}
+
+
+
+
+
+
+}

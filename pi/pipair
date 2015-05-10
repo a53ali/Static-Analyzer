@@ -1,0 +1,5 @@
+#!/bin/bash
+opt -print-callgraph $1 2>../callgraph.txt 1>/dev/null
+cd ..
+java -Xmx128m pip $@ 2>/dev/null
+

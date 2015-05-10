@@ -1,0 +1,101 @@
+{
+  "header" : {
+    "format" : "commit preview report",
+    "version" : 2
+  },
+  "analysisInfo" : {
+    "reportTimestamp" : "2015-04-05T19:47:38.078Z",
+    "comparisonSnapshotId" : null,
+    "ownerAssignmentRule" : "default_component_owner",
+    "command" : "/usr/local/cov-analysis-7.6.0/bin/cov-analyze --dir /home/a53ali/coverity-idirs/g118_myproj --include-java -j auto --strip-path /home/a53ali/g118 --enable-fb",
+    "user" : "admin"
+  },
+  "issueInfo" : [ {
+    "cid" : 10209,
+    "mergeKey" : "62f55165ca968a001788386768ed1f6a",
+    "presentInComparisonSnapshot" : false,
+    "firstDetectedDateTime" : "2015-04-05T19:47:38.078Z",
+    "occurrences" : [ {
+      "checker" : "RESOURCE_LEAK",
+      "file" : "/pip.java",
+      "function" : "pip.parse(java.lang.String)",
+      "extra" : "FileInputStream",
+      "mergeWithLowercaseFile" : false,
+      "subcategory" : "exceptional_path",
+      "mainEventLineNumber" : 75,
+      "mainEventDescription" : "Variable \"fstream\" going out of scope leaks the resource it refers to.",
+      "componentName" : "Other",
+      "componentDefaultOwner" : null,
+      "componentDefaultOwnerLdapServer" : null
+    } ],
+    "triage" : {
+      "externalReference" : null,
+      "classification" : "Unclassified",
+      "owner" : null,
+      "action" : "Undecided",
+      "severity" : "Unspecified",
+      "fixTarget" : "Untargeted",
+      "legacy" : "False"
+    },
+    "customTriage" : { },
+    "ownerLdapServerName" : null
+  }, {
+    "cid" : 10210,
+    "mergeKey" : "be735b60ed0ea6105b1df518e48c7761",
+    "presentInComparisonSnapshot" : false,
+    "firstDetectedDateTime" : "2015-04-05T19:47:38.078Z",
+    "occurrences" : [ {
+      "checker" : "FB.DM_DEFAULT_ENCODING",
+      "file" : "/pip.java",
+      "function" : "pip.parse(java.lang.String)",
+      "extra" : "",
+      "mergeWithLowercaseFile" : false,
+      "subcategory" : "none",
+      "mainEventLineNumber" : 35,
+      "mainEventDescription" : "Found reliance on default encoding: new java.io.InputStreamReader(InputStream).",
+      "componentName" : "Other",
+      "componentDefaultOwner" : null,
+      "componentDefaultOwnerLdapServer" : null
+    } ],
+    "triage" : {
+      "externalReference" : null,
+      "classification" : "Unclassified",
+      "owner" : null,
+      "action" : "Undecided",
+      "severity" : "Unspecified",
+      "fixTarget" : "Untargeted",
+      "legacy" : "False"
+    },
+    "customTriage" : { },
+    "ownerLdapServerName" : null
+  }, {
+    "cid" : 10211,
+    "mergeKey" : "8d2e45e40e0d69ca71b54b6f04ad4a17",
+    "presentInComparisonSnapshot" : false,
+    "firstDetectedDateTime" : "2015-04-05T19:47:38.078Z",
+    "occurrences" : [ {
+      "checker" : "FB.GC_UNRELATED_TYPES",
+      "file" : "/pip.java",
+      "function" : "pip.parse(java.lang.String)",
+      "extra" : "",
+      "mergeWithLowercaseFile" : false,
+      "subcategory" : "none",
+      "mainEventLineNumber" : 54,
+      "mainEventDescription" : "String is incompatible with expected argument type Integer.",
+      "componentName" : "Other",
+      "componentDefaultOwner" : null,
+      "componentDefaultOwnerLdapServer" : null
+    } ],
+    "triage" : {
+      "externalReference" : null,
+      "classification" : "Unclassified",
+      "owner" : null,
+      "action" : "Undecided",
+      "severity" : "Unspecified",
+      "fixTarget" : "Untargeted",
+      "legacy" : "False"
+    },
+    "customTriage" : { },
+    "ownerLdapServerName" : null
+  } ]
+}

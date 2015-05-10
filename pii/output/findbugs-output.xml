@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0-dev-20140429-1103397" sequence="0" timestamp="1428263059000" analysisTimestamp="1428263061473" release="">
+  <Project projectName="coverityEmit">
+    <Jar>/home/a53ali/coverity-idirs/g118_myproj/output/private/coverity_ac.jar</Jar>
+    <AuxClasspathEntry>/home/a53ali/coverity-idirs/g118_myproj/output/private/coverity_cp_n_jars.jar</AuxClasspathEntry>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" abbrev="Dm" category="I18N" instanceHash="9a0112d7f43adeebd52c5d2e1f77d280" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="19">
+    <ShortMessage></ShortMessage>
+    <LongMessage>-[CovLStr-[v1]--[Found reliance on default encoding: -[0]-.]--[new java.io.InputStreamReader(InputStream)]-]-</LongMessage>
+    <Class classname="pip" primary="true">
+      <SourceLine classname="pip" start="15" end="232" sourcefile="pip.java" sourcepath="pip.java">
+        <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+      </SourceLine>
+      <Message>-[CovLStr-[v1]--[In class -[0]-]--[pip]-]-</Message>
+    </Class>
+    <Method classname="pip" name="parse" signature="(Ljava/lang/String;)V" isStatic="true" primary="true">
+      <SourceLine classname="pip" start="30" end="75" startBytecode="0" endBytecode="441" sourcefile="pip.java" sourcepath="pip.java"/>
+      <Message>-[CovLStr-[v1]--[In method -[0]-]--[pip.parse(String)]-]-</Message>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="121" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+      <Message>-[CovLStr-[v1]--[Called method -[0]-]--[new java.io.InputStreamReader(InputStream)]-]-</Message>
+    </Method>
+    <SourceLine classname="pip" primary="true" start="35" end="35" startBytecode="27" endBytecode="27" sourcefile="pip.java" sourcepath="pip.java">
+      <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="GC_UNRELATED_TYPES" priority="1" abbrev="GC" category="CORRECTNESS" instanceHash="63c02472373c0f38bd9c84b241c8d389" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="1">
+    <ShortMessage></ShortMessage>
+    <LongMessage>-[CovLStr-[v1]--[-[0]- is incompatible with expected argument type -[1]-.]--[String]--[Integer]-]-</LongMessage>
+    <Class classname="pip" primary="true">
+      <SourceLine classname="pip" start="15" end="232" sourcefile="pip.java" sourcepath="pip.java">
+        <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+      </SourceLine>
+      <Message>-[CovLStr-[v1]--[In class -[0]-]--[pip]-]-</Message>
+    </Class>
+    <Method classname="pip" name="parse" signature="(Ljava/lang/String;)V" isStatic="true" primary="true">
+      <SourceLine classname="pip" start="30" end="75" startBytecode="0" endBytecode="112" sourcefile="pip.java" sourcepath="pip.java"/>
+      <Message>-[CovLStr-[v1]--[In method -[0]-]--[pip.parse(String)]-]-</Message>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="109" end="2985" sourcefile="String.java" sourcepath="java/lang/String.java">
+        <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+      </SourceLine>
+      <Message>-[CovLStr-[v1]--[Actual type -[0]-]--[String]-]-</Message>
+    </Type>
+    <Type descriptor="Ljava/lang/Integer;" role="TYPE_EXPECTED">
+      <SourceLine classname="java.lang.Integer" start="50" end="1177" sourcefile="Integer.java" sourcepath="java/lang/Integer.java">
+        <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+      </SourceLine>
+      <Message>-[CovLStr-[v1]--[Expected -[0]-]--[Integer]-]-</Message>
+    </Type>
+    <Method classname="java.util.Hashtable" name="contains" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Hashtable" start="281" end="293" startBytecode="0" endBytecode="207" sourcefile="Hashtable.java" sourcepath="java/util/Hashtable.java"/>
+      <Message>-[CovLStr-[v1]--[Called method -[0]-]--[java.util.Hashtable.contains(Object)]-]-</Message>
+    </Method>
+    <Field classname="pip" name="enc" signature="Ljava/util/Hashtable;" sourceSignature="Ljava/util/Hashtable&lt;Ljava/lang/String;Ljava/lang/Integer;&gt;;" isStatic="true" primary="true" role="FIELD_INVOKED_ON">
+      <SourceLine classname="pip" sourcefile="pip.java" sourcepath="pip.java">
+        <Message>-[CovLStr-[v1]--[In this file]-]-</Message>
+      </SourceLine>
+      <Message>-[CovLStr-[v1]--[Invoked on -[0]-]--[pip.enc]-]-</Message>
+    </Field>
+    <LocalVariable name="?" register="3" pc="142" role="LOCAL_VARIABLE_ARGUMENT">
+      <Message>-[CovLStr-[v1]--[-[0]- passed as argument]--[?]-]-</Message>
+    </LocalVariable>
+    <Method classname="java.lang.String" name="equals" signature="(Ljava/lang/Object;)Z" isStatic="false" role="METHOD_EQUALS_USED">
+      <SourceLine classname="java.lang.String" start="1013" end="1031" startBytecode="0" endBytecode="255" sourcefile="String.java" sourcepath="java/lang/String.java"/>
+      <Message>-[CovLStr-[v1]--[-[0]- used to determine equality]--[String.equals(Object)]-]-</Message>
+    </Method>
+    <SourceLine classname="pip" primary="true" start="54" end="54" startBytecode="143" endBytecode="143" sourcefile="pip.java" sourcepath="pip.java">
+      <Message>-[CovLStr-[v1]--[Here]-]-</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugCategory category="CORRECTNESS">
+    <Description>Correctness</Description>
+  </BugCategory>
+  <BugCategory category="I18N">
+    <Description>Internationalization</Description>
+  </BugCategory>
+  <BugPattern type="GC_UNRELATED_TYPES" abbrev="GC" category="CORRECTNESS">
+    <ShortDescription></ShortDescription>
+    <Details><![CDATA[]]></Details>
+  </BugPattern>
+  <BugPattern type="DM_DEFAULT_ENCODING" abbrev="Dm" category="I18N">
+    <ShortDescription></ShortDescription>
+    <Details><![CDATA[]]></Details>
+  </BugPattern>
+  <BugCode abbrev="Dm">
+    <Description>Dubious method used</Description>
+  </BugCode>
+  <BugCode abbrev="GC">
+    <Description>Suspicious calls to generic collection methods</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sun, 5 Apr 2015 15:44:19 -0400" total_classes="1" referenced_classes="26" total_bugs="2" total_size="133" num_packages="1" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="9.67" clock_seconds="2.08" peak_mbytes="304.00" alloc_mbytes="981.50" gc_seconds="0.02" priority_1="2">
+    <FileStats path="pip.java" bugCount="2" size="133" bugHash="508ef04400924e94448af112c1975d49"/>
+    <PackageStats package="" total_bugs="2" total_types="1" total_size="133" priority_1="2">
+      <ClassStats class="pip" sourceFile="pip.java" interface="false" size="133" bugs="2" priority_1="2"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="252" invocations="407" avgMicrosecondsPerInvocation="619" maxMicrosecondsPerInvocation="23832" standardDeviationMircosecondsPerInvocation="1838"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="114" invocations="12" avgMicrosecondsPerInvocation="9554" maxMicrosecondsPerInvocation="31653" standardDeviationMircosecondsPerInvocation="9295"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="91" invocations="126" avgMicrosecondsPerInvocation="725" maxMicrosecondsPerInvocation="7136" standardDeviationMircosecondsPerInvocation="1224"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="87" invocations="26" avgMicrosecondsPerInvocation="3355" maxMicrosecondsPerInvocation="22230" standardDeviationMircosecondsPerInvocation="4930"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="86" invocations="8" avgMicrosecondsPerInvocation="10853" maxMicrosecondsPerInvocation="46460" standardDeviationMircosecondsPerInvocation="14847"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="78" invocations="8" avgMicrosecondsPerInvocation="9824" maxMicrosecondsPerInvocation="29318" standardDeviationMircosecondsPerInvocation="11374"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="72" invocations="8" avgMicrosecondsPerInvocation="9119" maxMicrosecondsPerInvocation="24843" standardDeviationMircosecondsPerInvocation="8756"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="70" invocations="8" avgMicrosecondsPerInvocation="8813" maxMicrosecondsPerInvocation="40061" standardDeviationMircosecondsPerInvocation="12153"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="56" invocations="365" avgMicrosecondsPerInvocation="155" maxMicrosecondsPerInvocation="2897" standardDeviationMircosecondsPerInvocation="361"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.StreamResourceTracker" totalMilliseconds="56" invocations="11" avgMicrosecondsPerInvocation="5148" maxMicrosecondsPerInvocation="17595" standardDeviationMircosecondsPerInvocation="4192"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="47" invocations="1" avgMicrosecondsPerInvocation="47599" maxMicrosecondsPerInvocation="47599" standardDeviationMircosecondsPerInvocation="0"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="43" invocations="8" avgMicrosecondsPerInvocation="5497" maxMicrosecondsPerInvocation="17854" standardDeviationMircosecondsPerInvocation="5963"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="40" invocations="8" avgMicrosecondsPerInvocation="5087" maxMicrosecondsPerInvocation="13655" standardDeviationMircosecondsPerInvocation="4222"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="37" invocations="8" avgMicrosecondsPerInvocation="4691" maxMicrosecondsPerInvocation="28931" standardDeviationMircosecondsPerInvocation="9213"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="37" invocations="26" avgMicrosecondsPerInvocation="1431" maxMicrosecondsPerInvocation="10089" standardDeviationMircosecondsPerInvocation="2192"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="36" invocations="32" avgMicrosecondsPerInvocation="1129" maxMicrosecondsPerInvocation="12277" standardDeviationMircosecondsPerInvocation="2252"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="31" invocations="7" avgMicrosecondsPerInvocation="4533" maxMicrosecondsPerInvocation="14620" standardDeviationMircosecondsPerInvocation="4815"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="28" invocations="26" avgMicrosecondsPerInvocation="1087" maxMicrosecondsPerInvocation="7427" standardDeviationMircosecondsPerInvocation="2058"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

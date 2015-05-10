@@ -1,0 +1,120 @@
+timer                                            ms      calls
+--------------------------------------------------------------
+sequential initialization                      9389          1
+  Looking for translation units                   0          1
+  Computing links for translation units        6191          1
+  xfer symbol cache                             608          1
+  Computing virtual overrides                  1330          1
+  Computing callgraph                            51          1
+  Topologically sorting functions                 1          1
+  (left over)                                  1208
+Computing node costs                              2          1
+Analysis run                                    650          1
+  loadFromEmit                                   66         32
+    VOLATILE_ATOMICITY_STAT                       0          8
+    RELAX_NULL_RETURN                             2          8
+    RELAX_ALLOC                                   0          8
+    LOCK_FINDER                                   1          8
+    LOCK_ORDER                                    8          8
+    GUARDED_BY_VIOLATION_pass1                    1         16
+    LOCK_INVERSION_pass1                          3         16
+    OVERFLOW_BEFORE_WIDEN_pass1                   0          8
+    BAD_CHECK_OF_WAIT_COND                        0          8
+    BAD_LOCK_OBJECT_pass1                         0          8
+    CALL_SUPER                                    0          8
+    LOCK_EVASION                                  0          8
+    NON_STATIC_GUARDING_STATIC                    0          8
+    NULL_RETURNS_pass1                            0          8
+    (left over)                                  51
+  BAD_LOCK_OBJECT_LOCK_SOURCE_STAT                0          1
+  CALL_SUPER_STAT                                 0          1
+  CHECKED_RETURN_STAT                             0          1
+  NON_STATIC_GUARDING_STATIC_STAT                 0          1
+  VOLATILE_ATOMICITY_STAT                         0          1
+  DUMMY_DERIVER_CONCURRENCY                       0          1
+  DUMMY_DERIVER_STACK_USE                         0          1
+  IFACE_TRACKER                                   0          2
+  RELAX_ALLOC                                     0          1
+  RELAX_BENIGN_CLOSURE                            0          1
+  RELAX_CHECKED_RETURN                            0          1
+  RELAX_CLOSE_RESOURCE                            0          1
+  RELAX_DEREF_ARGS                                0          1
+  RELAX_GETLOCK                                   0          1
+  RELAX_ITERATOR_RETURNS                          0          1
+  RELAX_ITERATOR_SINKS                            0          1
+  RELAX_LOCKS                                     0          1
+  RELAX_NOTHING                                   0          1
+  RELAX_NULL_RETURN                               0          1
+  RELAX_PARAM_NAMES                               0          1
+  RELAX_WRITE                                     0          1
+  LOCK_FINDER                                     0          1
+  LOCK_ORDER                                      0          1
+  BAD_CHECK_OF_WAIT_COND                          0          1
+  CALL_SUPER                                      0          1
+  CONSTANT_EXPRESSION_RESULT                      0          1
+  COPY_PASTE_ERROR                                0          1
+  IDENTICAL_BRANCHES                              0          1
+  INVALIDATE_ITERATOR                             0          1
+  LOCK_EVASION                                    0          1
+  MISSING_BREAK                                   0          1
+  NESTING_INDENT_MISMATCH                         0          1
+  NON_STATIC_GUARDING_STATIC                      0          1
+  REVERSE_INULL                                   0          1
+  STRAY_SEMICOLON                                 0          1
+  SWAPPED_ARGUMENTS                               0          1
+  UNREACHABLE                                     0          1
+
+activity                                         ms      calls
+--------------------------------------------------------------
+RELAX_GETLOCK                                     0          1
+RELAX_LOCKS                                       0          1
+DUMMY_DERIVER_CONCURRENCY                         0          1
+IFACE_TRACKER                                     0          2
+LOCK_FINDER                                       1          9
+LOCK_ORDER                                        8          9
+BAD_CHECK_OF_WAIT_COND                            0          9
+BAD_LOCK_OBJECT_pass1                             0          8
+CALL_SUPER                                        0          9
+CONSTANT_EXPRESSION_RESULT                        0          1
+COPY_PASTE_ERROR                                  0          1
+GUARDED_BY_VIOLATION_pass1                        1         16
+IDENTICAL_BRANCHES                                0          1
+INVALIDATE_ITERATOR                               0          1
+LOCK_EVASION                                      0          9
+LOCK_INVERSION_pass1                              3         16
+MISSING_BREAK                                     0          1
+NESTING_INDENT_MISMATCH                           0          1
+NON_STATIC_GUARDING_STATIC                        0          9
+NULL_RETURNS_pass1                                0          8
+OVERFLOW_BEFORE_WIDEN_pass1                       0          8
+REVERSE_INULL                                     0          1
+STRAY_SEMICOLON                                   0          1
+SWAPPED_ARGUMENTS                                 0          1
+UNREACHABLE                                       0          1
+RELAX_ALLOC                                       0          9
+RELAX_CLOSE_RESOURCE                              0          1
+RELAX_CHECKED_RETURN                              0          1
+RELAX_DEREF_ARGS                                  0          1
+RELAX_NULL_RETURN                                 2          9
+RELAX_WRITE                                       0          1
+RELAX_ITERATOR_RETURNS                            0          1
+RELAX_ITERATOR_SINKS                              0          1
+RELAX_NOTHING                                     0          1
+RELAX_PARAM_NAMES                                 0          1
+RELAX_BENIGN_CLOSURE                              0          1
+DUMMY_DERIVER_STACK_USE                           0          1
+CHECKED_RETURN_STAT                               0          1
+CALL_SUPER_STAT                                   0          1
+BAD_LOCK_OBJECT_LOCK_SOURCE_STAT                  0          1
+NON_STATIC_GUARDING_STATIC_STAT                   0          1
+VOLATILE_ATOMICITY_STAT                           0          9
+sequential initialization                      9389          1
+Looking for translation units                     0          1
+Computing links for translation units          6191          1
+xfer symbol cache                               608          1
+Computing virtual overrides                    1330          1
+Computing callgraph                              51          1
+Topologically sorting functions                   1          1
+Computing node costs                              2          1
+Analysis run                                    650          1
+loadFromEmit                                     66         32

@@ -1,0 +1,15 @@
+/usr/local/cov-analysis-7.6.0/bin/cov-analyze --dir /home/a53ali/coverity-idirs/g118_myproj --include-java -j auto --strip-path /home/a53ali/g118 --enable-fb 
+
+FindBugs time: 00:00:03
+Analysis summary report:
+------------------------
+Files analyzed                 : 1
+Total LoC input to cov-analyze : 166
+Functions analyzed             : 8
+Paths analyzed                 : 210
+Time taken by analysis         : 00:00:21
+Defect occurrences found       : 1 RESOURCE_LEAK
+
+FindBugs Checkers: 2 errors
+ FB.DM_DEFAULT_ENCODING           1
+  FB.GC_UNRELATED_TYPES           1

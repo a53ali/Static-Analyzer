@@ -1,0 +1,57 @@
+{
+  "cov-analyze" : {
+    time : 21,
+    "line-counts" : {
+      "C/C++" : {
+        "blank-lines" : 0,
+        "code-lines" : 0,
+        "comment-lines" : 0
+      },
+      Java : {
+        "blank-lines" : 44,
+        "code-lines" : 166,
+        "comment-lines" : 29
+      },
+      "C#" : {
+        "blank-lines" : 0,
+        "code-lines" : 0,
+        "comment-lines" : 0
+      }
+    },
+    ident : "7.6.0 (build 9b77a50df0 p-harmony-push-21098.563)",
+    platform : "Linux 2.6.18-402.el5 x86_64",
+    "short-platform" : "linux64",
+    extver : "7.6.0",
+    intver : "9b77a50df0 p-harmony-push-21098.563",
+    "aw-peak-mem-bytes" : 35155968,
+    "am+aw-peak-mem-bytes" : 138887168,
+    "bytecode-functions" : 0,
+    concurrency : true,
+    cxx : true,
+    "enable-parse-warings" : false,
+    failures : 0,
+    "files-analyzed" : 1,
+    force : false,
+    "function-metrics-count" : 8,
+    "functions-analyzed" : 8,
+    "incremental-hits" : 0,
+    "incremental-misses" : 32,
+    "max-mem" : 512,
+    "memout-count" : 0,
+    "pathout-count" : 0,
+    paths : 5000,
+    "paths-analyzed" : 210,
+    "peak-mem-bytes" : 260644864,
+    security : true,
+    "tus-count" : 11,
+    "string-graph-nodes" : 0,
+    "web-app-entry-points" : 0,
+    "web-app-views-unused" : 0,
+    "ta.code_age_thresholds" : "0, 0",
+    "enabled-checkers" : "ARRAY_VS_SINGLETON ASSERT_SIDE_EFFECT BAD_ALLOC_ARITHMETIC BAD_ALLOC_STRLEN BAD_CHECK_OF_WAIT_COND BAD_COMPARE BAD_FREE BAD_LOCK_OBJECT BAD_OVERRIDE BAD_SIZEOF CALL_SUPER CHAR_IO CHECKED_RETURN COM.BAD_FREE COM.BSTR.CONV CONSTANT_EXPRESSION_RESULT COPY_PASTE_ERROR CTOR_DTOR_LEAK DEADCODE DELETE_ARRAY DELETE_VOID EVALUATION_ORDER FB.* FORWARD_NULL GUARDED_BY_VIOLATION IDENTICAL_BRANCHES INFINITE_LOOP INVALIDATE_ITERATOR LOCK_EVASION LOCK_INVERSION MISSING_BREAK MISSING_RETURN NEGATIVE_RETURNS NESTING_INDENT_MISMATCH NON_STATIC_GUARDING_STATIC NO_EFFECT NULL_RETURNS OVERFLOW_BEFORE_WIDEN OVERRUN PASS_BY_VALUE READLINK RESOURCE_LEAK RETURN_LOCAL REVERSE_INULL REVERSE_NEGATIVE SIGN_EXTENSION SIZEOF_MISMATCH STRAY_SEMICOLON STREAM_FORMAT_STATE SWAPPED_ARGUMENTS UNCAUGHT_EXCEPT UNINIT UNINIT_CTOR UNREACHABLE UNUSED_VALUE USE_AFTER_FREE VARARGS VOLATILE_ATOMICITY WRAPPER_ESCAPE",
+    "FB.DM_DEFAULT_ENCODING-new-defect-count" : 1,
+    "FB.GC_UNRELATED_TYPES-new-defect-count" : 1,
+    "RESOURCE_LEAK-new-defect-count" : 1,
+    "total-new-defect-count" : 3
+  }
+}
